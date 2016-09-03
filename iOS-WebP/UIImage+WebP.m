@@ -14,9 +14,8 @@ static void free_image_data(void *info, const void *data, size_t size)
     if(info != NULL) {
         WebPFreeDecBuffer(&(((WebPDecoderConfig *) info)->output));
         free(info);
-    } else {
-        free((void *) data);
     }
+    free((void *) data);
 }
 
 @implementation UIImage (WebP)
